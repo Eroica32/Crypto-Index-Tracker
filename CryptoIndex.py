@@ -66,6 +66,7 @@ priceTracking = indexData[['name', 'symbol', 'total_supply', 'quote']]
 priceTracking.to_csv('UpdatedCoinInformation.csv')
 indexInformation = pd.read_csv('UpdatedCoinInformation.csv')
 cleanQuoteColumn(indexInformation)
+priceTracking[['name', 'symbol', 'total_supply', 'MarketCap', 'price']].to_csv('UpdatedCoinInformation.csv')
 
 # Index caluation
 totalIndexValue = float(input('How much would you like to put into your index (in CAD): '))
