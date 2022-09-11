@@ -77,4 +77,6 @@ priceTracking['how much to buy'] = priceTracking['Prop in Index'] * totalIndexVa
 print(priceTracking['how much to buy'])
 print('saved to CryptoIndex.csv')
 
+sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price')
+
 priceTracking[['name', 'how much to buy']].to_csv('CryptoIndexSummary.csv')
