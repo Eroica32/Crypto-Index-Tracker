@@ -1,9 +1,9 @@
 import json
 import pandas as pd
 import coinmarketcapapi
-import wx
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 # save as csv, then extract from there
 # functions
 def getSymbol(coinName):
@@ -60,7 +60,7 @@ getListing(coinsInMyIndex)
 
 # Cleaning API Data from CMC
 priceTracking = indexData[['name', 'symbol', 'total_supply', 'quote']]
-priceTracking.to_csv('UpdateIndexInformation.csv')
+priceTracking.to_csv('UpdatedCoinInformation.csv')
 indexInformation = pd.read_csv('UpdatedCoinInformation.csv')
 cleanQuoteColumn(indexInformation)
 
@@ -75,8 +75,11 @@ for coin in priceTracking['MarketCap']:
 priceTracking['Prop in Index'] = list(tempDict.values())
 priceTracking['how much to buy'] = priceTracking['Prop in Index'] * totalIndexValue
 print(priceTracking['how much to buy'])
-print('saved to CryptoIndex.csv')
-
-sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price')
-
+print('saved to CryptoIndexSummary.csv')
 priceTracking[['name', 'how much to buy']].to_csv('CryptoIndexSummary.csv')
+
+# visualization
+# sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price')
+# plt.show()
+
+
