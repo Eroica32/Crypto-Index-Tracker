@@ -79,7 +79,7 @@ print('saved to CryptoIndexSummary.csv')
 priceTracking[['name', 'how much to buy']].to_csv('CryptoIndexSummary.csv')
 
 # visualization
-# sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price')
-# plt.show()
+sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price', kind='bar')
+plt.show()
 
 
