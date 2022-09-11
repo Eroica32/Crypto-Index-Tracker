@@ -4,7 +4,7 @@ import coinmarketcapapi
 import wx
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+# save as csv, then extract from there
 # functions
 def getSymbol(coinName):
   '''get the symbol of a coin from a coin name'''
@@ -60,7 +60,9 @@ getListingUsingID(coinID)
 
 # Cleaning API Data from CMC
 priceTracking = indexData[['name', 'symbol', 'total_supply', 'quote']]
-cleanQuoteColumn(priceTracking)
+priceTracking.to_csv('UpdateIndexInformation.csv')
+indexInformation = pd.read_csv('UpdateIndexInformation.csv')
+cleanQuoteColumn(indexInformation)
 
 # Index caluation
 totalIndexValue = float(input('How much would you like to put into your index: '))
