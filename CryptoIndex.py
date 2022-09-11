@@ -48,6 +48,9 @@ cmc = coinmarketcapapi.CoinMarketCapAPI('ece06e3e-37d3-4877-808b-48ef88bb6a6a')
 
 # information about coins in my index (no stable coins)
 # used for Indexing, BTC already included
+coinsInMyIndex1=['BTC', 'ETH', 'BNB', 'XRP', 'ADA', 'SOL', 'DOGE', 'DOT', 
+'MATIC', 'SHIB', 'AVAX', 'UNI', 'ETC', 'LTC', 'ATOM','NEAR', 'LINK', 
+'CRO', 'XLM', 'FLOW', 'VET'] 
 coinsInMyIndex=['ETH', 'BNB', 'XRP', 'ADA', 'SOL', 'DOGE', 'DOT', 
 'MATIC', 'SHIB', 'AVAX', 'UNI', 'ETC', 'LTC', 'ATOM','NEAR', 'LINK', 
 'CRO', 'XLM', 'FLOW', 'VET'] 
@@ -79,7 +82,8 @@ print('saved to CryptoIndexSummary.csv')
 priceTracking[['name', 'how much to buy']].to_csv('CryptoIndexSummary.csv')
 
 # visualization
-sns.catplot(data=priceTracking, x='name', y='how much to buy', hue='price', kind='bar')
+colors = sns.color_palette('bright')
+plt.pie(priceTracking['how much to buy'], labels=coinsInMyIndex1,colors = colors, autopct = '%0.0f%%', labeldistance=1.3)
 plt.show()
 
 
