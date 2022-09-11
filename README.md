@@ -1,5 +1,5 @@
 # Crypto-Index-Tracker
-I made this program to track the top 21st non-stable crypto currencies with the largest market capitalizations.
+I made this program to track the top 21 non-stable crypto currencies with the largest market capitalizations.
 This program receives coin information from Coin Market Cap, cleans it, and calculates the its percentage in 
 relation to the total market cap of the 21 coins. 
 
