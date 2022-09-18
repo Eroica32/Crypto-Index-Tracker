@@ -52,10 +52,10 @@ def cleanQuoteColumn(df):
 # Add all coin information from CMC Json to DataFrame
 rawData = getListing(symbols)
 
-# Cleaning API Data from CMC
+# Cleaning API Data from CMC TODO fix this, too much writing and reading
 coreData = rawData[['name', 'symbol', 'total_supply', 'quote']]
 coreData.to_csv('UpdatedCoinInformation.csv')
-indexInformation = pd.read_csv(rawData[['name', 'symbol', 'total_supply', 'quote']])
+indexInformation = pd.read_csv('UpdatedCoinInformation.csv')
 cleanQuoteColumn(indexInformation)
 coreData[['name', 'symbol', 'total_supply', 'MarketCap', 'price']].to_csv('UpdatedCoinInformation.csv')
 
