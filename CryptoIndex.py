@@ -1,3 +1,4 @@
+from distutils import core
 import json
 import pandas as pd
 import coinmarketcapapi
@@ -13,7 +14,7 @@ try:
   cmc = coinmarketcapapi.CoinMarketCapAPI('ece06e3e-37d3-4877-808b-48ef88bb6a6a')
 except:
   print('connection error, check access code')
-
+# TODO make it so that it stores all my data
 # TODO maybe put get symbol somewhere else
 def getSymbol():
   '''get a dataframe of coin names and symbols'''
@@ -71,7 +72,8 @@ coreData['Prop in Index'] = list(tempDict.values())
 coreData['how much to buy'] = coreData['Prop in Index'] * totalIndexValue
 print(coreData['how much to buy'])
 print('saved to CryptoIndexSummary.csv')
-coreData[['name', 'how much to buy']].to_csv('CryptoIndexSummary.csv')
+coreData['how much till index'] =  coreData['how much to buy'] - coreData['price'] * list(targetCoin['myCoins']) 
+coreData[['name', 'how much to buy', 'how much till index']].to_csv('CryptoIndexSummary.csv')
 
 # visualization
 colors = sns.color_palette('bright')
