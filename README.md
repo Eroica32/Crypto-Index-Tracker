@@ -8,3 +8,10 @@ returns:
 1. a csv file with updated information on the 21 coins.
 2. a csv file with the amount that I should invest for each coin to achieve desired index proportion. (also printed out in the terminal)
 3. a pie chart visualization of return #2.
+
+Next steps to the Development:
+1. make my csv store historical data
+2. Put getSymbol() somewhere else
+3. fix inefficiency (readability and code efficiency)
+4. improved visualization
+5. improve UI
