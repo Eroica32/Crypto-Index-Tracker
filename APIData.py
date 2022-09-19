@@ -42,7 +42,7 @@ class APIData:
         counter = 0
         for row in coreData[['quote']].itertuples():
             # string to dict
-            tempDict = json.loads(str(str(row[1])[8:len(row[1])-1]).replace("'",'"').replace('None', '0'))
+            tempDict = json.loads(str(str(row[1])[8:len(str(row[1]))-1]).replace("'",'"').replace('None', '0'))
             price[counter] = tempDict['price']
             marketCap[counter] = tempDict['market_cap']
             counter += 1
