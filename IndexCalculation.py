@@ -10,7 +10,7 @@ class IndexCalculation:
         tempDict = dict()
         counter = 0
         for coin in self.coreData['MarketCap']:
-            tempDict[counter] = float(coin) / self.totalValue
+            tempDict[counter] = (float(coin) / self.totalValue) * 100
             counter += 1
         self.coreData['Prop'] = list(tempDict.values())
     def totalCoinValue(self):
