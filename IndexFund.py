@@ -19,7 +19,7 @@ index.calculateProp()
 index.totalCoinValue()
 index.additionalCapitalNeeded()
 index.percentTotalCapiptal()
-index.coreData.to_csv('IndexSummary.csv')
+index.coreData[['name', 'symbol', 'price', 'Prop','total coin value','additional capital needed','percent capital invested']].to_csv('IndexSummary.csv')
 
 # visualization
 vis = Visualization()

@@ -16,7 +16,7 @@ class IndexCalculation:
     def totalCoinValue(self):
         self.coreData['total coin value'] = self.coreData['Prop'] * self.totalIndexValue
     def additionalCapitalNeeded(self):
-        self.coreData['additional capital needed'] =  self.coreData['total coin value'] - self.coreData['price'] * self.targetCoins['myCoins']
+        self.coreData['additional capital needed'] =  self.coreData['total coin value'] - self.coreData['price'] * list(self.targetCoins['myCoins'])
     def percentTotalCapiptal(self):
-        self.coreData['percent capital invested'] = (self.coreData['price'] * self.targetCoins['myCoins'] / self.coreData['total coin value']) * 100
+        self.coreData['percent capital invested'] = (self.coreData['price'] * list(self.targetCoins['myCoins']) / self.coreData['total coin value']) * 100
     
