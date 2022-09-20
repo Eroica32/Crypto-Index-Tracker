@@ -14,7 +14,7 @@ class IndexCalculation:
             counter += 1
         self.coreData['Prop'] = list(tempDict.values())
     def totalCoinValue(self):
-        self.coreData['total coin value'] = self.coreData['Prop'] * self.totalIndexValue
+        self.coreData['total coin value'] = self.coreData['Prop'] * self.totalIndexValue / 100
     def additionalCapitalNeeded(self):
         self.coreData['additional capital needed'] =  self.coreData['total coin value'] - self.coreData['price'] * list(self.targetCoins['myCoins'])
     def percentTotalCapiptal(self):
