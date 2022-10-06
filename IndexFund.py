@@ -1,4 +1,5 @@
 from APIData import APIData
+from HistoricalAnalysis import HistoricalAnalysis
 from IndexCalculation import IndexCalculation
 from Visualization import Visualization
 
@@ -21,8 +22,17 @@ index.additionalCapitalNeeded()
 index.percentTotalCapiptal()
 index.coreData[['name', 'price', 'Prop','total coin value','additional capital needed','percent capital invested']].to_csv('IndexSummary.csv')
 
+hist = HistoricalAnalysis(1.36)
+historicalData = hist.getHistory(API.targetCoins)
+historicalData.to_csv('historicalData.csv')
+
 # visualization
 vis = Visualization()
 vis.pieChart(coreData)
+
+
+
+
+
 
 
